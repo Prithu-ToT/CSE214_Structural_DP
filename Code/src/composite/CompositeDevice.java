@@ -6,7 +6,7 @@ import src.SmartDevice;
 
 public abstract class CompositeDevice implements SmartDevice{
     protected String name;
-    public List<SmartDevice> childList;
+    protected List<SmartDevice> childList;
     
     public void addToChildern(SmartDevice device){
         childList.addLast(device);

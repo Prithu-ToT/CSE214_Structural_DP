@@ -1,0 +1,104 @@
+
+--- 1. LEAF DEVICE BASICS ---
+  PASS  Light off initially
+  PASS  Light on power
+  PASS  Light on status
+  PASS  Light off power
+  PASS  Thermostat off initially
+  PASS  Thermostat on power
+  PASS  Thermostat off power
+  PASS  Speaker off initially
+  PASS  Speaker on power
+  PASS  Speaker off power
+
+--- 2. ROOM ---
+  PASS  Room inactive power
+  PASS  Room active power
+  PASS  Room deactivated power
+  PASS  Room 2 lights + speaker
+
+--- 3. HOME ---
+  PASS  Home total power
+  PASS  Home activated
+  PASS  Home deactivated
+
+--- 4. Upgrade — ACCESS RESTRICTED ---
+  PASS  Locked light stays off
+  PASS  Wrong PIN still locked
+  PASS  Correct PIN unlocks
+  PASS  Locked but running device reports power
+  PASS  Locked status annotation
+  PASS  Unlocked no annotation
+
+--- 5. Upgrade — TIMER CONTROLLED ---
+  PASS  Timer device active
+  PASS  Timer expired, device off
+  PASS  Manual deactivate cancels timer
+  PASS  Timer status annotation
+  PASS  No timer annotation when off
+
+--- 6. Upgrade — POWER THROTTLED ---
+  PASS  Throttled 150W to 80W
+  PASS  10W under 50W cap unchanged
+  PASS  Throttled status annotation
+
+--- 7. Multiple Upgrade — DEVICE LEVEL ---
+  PASS  Locked + timed: light stays off
+  PASS  Unlocked + timed: light on
+  PASS  Timer expired: light off
+  PASS  Unlocked + throttled
+  PASS  Triple stack locked
+  PASS  Triple stack unlocked + throttled
+  PASS  Triple stack timer annotation
+  PASS  Triple stack timer expired
+
+--- 8. UNIFORM INTERFACE ---
+  PASS  Upgraded device is SmartDevice
+  PASS  Upgraded device has status
+  PASS  Eco room is SmartDevice
+  PASS  Eco room has status
+  PASS  Room with mixed children
+
+--- 9. ECOMODE FOR ROOM ---
+  PASS  EcoMode within budget
+  PASS  EcoMode sheds to fit budget
+  PASS  First light stays on
+  PASS  Second light stays on
+  PASS  Thermostat shed
+  PASS  EcoMode power <= budget
+
+--- 10. GUESTMODE FOR ROOM ---
+  PASS  Light allowed
+  PASS  Speaker allowed
+  PASS  Thermostat blocked by guest mode
+  PASS  Light allowed through guest mode
+  PASS  Guest power = allowed only
+  PASS  Guest restricted annotation
+
+--- 11. ORDER SENSITIVITY ---
+  PASS  Order produces different results (p1=100.0 vs p2=20.0)
+  PASS  Throttled version keeps more devices
+
+--- 12. UPGRADED DEVICE ON ROOM ---
+  PASS  Locked room: nothing activates
+  PASS  Unlocked room: all activate
+  PASS  Timed room active
+  PASS  Timed room expired
+  PASS  Night room locked
+  PASS  Upgraded room in home
+  PASS  Home with locked room
+
+--- 13. ROOM-LEVEL TYPE SAFETY ---
+  PASS  EcoMode accepts Room
+
+--- 14. MIXED SCENARIO ---
+  PASS  Speaker activated
+  PASS  Thermostat blocked
+  PASS  Light activated
+  PASS  Guest power total
+  PASS  Guest restricted annotation
+
+=======================================================
+  RESULTS: 71 passed, 0 failed, 71 total
+=======================================================
+  ALL TESTS PASSED
